@@ -45,4 +45,4 @@ const viewpastes = () => {
   )
 }
 
-export default viewpastes
+export default viewpastes;
