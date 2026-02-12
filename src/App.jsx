@@ -1,51 +1,42 @@
-import "./App.css";
-import "./index.css";
-import { createBrowserRouter } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import Pastes from "./components/pastes";
-import ViewPastes from "./components/viewpastes";
-import { RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import Home from "./components/Home"
+import Pastes from "./components/Pastes"
+import Viewpastes from "./components/Viewpastes"
+import Navbar from "./components/Navbar"
 
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: (
- <div className="w-full h-screen flex flex-col">
-  <Navbar />
-  <div className="flex justify-center items-center flex-1">
-    <Home />
-  </div>
-</div>
-    ),
-  },
-  {
-    path: "/pastes",
-    element: (
-      <div>
-        <Navbar />
-        <Pastes />
+const router = createBrowserRouter(
+  [
+    {
+      path:"/",
+      element:
+      <div className="w-full h-full flex flex-col">
+        <Navbar/>
+        <Home/>
       </div>
-    ),
-  },
-  {
-    path: "/pastes/:id",
-    element: (
-      <div>
-        <Navbar />
-        <ViewPastes />
-      </div>
-    ),
-  },
-]);
+    },
+    {
+      path:"/pastes",
+      element: <div className="w-full h-full flex flex-col">
+      <Navbar/>
+      <Pastes/>
+    </div>
+    },
+    {
+      path:"/pastes/:id",
+      element: <div className="w-full h-full flex flex-col">
+      <Navbar/>
+      <Viewpastes/>
+    </div>,
+    }
+  ]
+)
 
 function App() {
+
   return (
-    <div className="w-full h-full">
-      <RouterProvider router={router} />
-    </div>
-  );
+    <RouterProvider router={router}/>
+  )
 }
 
-export default App;
+export default App
