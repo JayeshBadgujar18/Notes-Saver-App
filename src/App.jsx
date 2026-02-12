@@ -12,8 +12,9 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div>
+      <div className="w-full h-screen p-4 m-1.5 flex flex-col gap-4">
         <Navbar />
+
         <Home />
       </div>
     ),
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div>
+    <div className="w-full h-full ">
       <RouterProvider router={router} />
     </div>
   );
