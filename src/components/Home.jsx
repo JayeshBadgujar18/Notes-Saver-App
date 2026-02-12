@@ -53,19 +53,20 @@ const Home = () => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto mt-10 p-4 gap-9 place-content-between flex flex-col">
+    <div className="max-w-2xl mx-auto mt-10 p-4 gap-9 place-content-between  flex flex-col  ">
       <div className=" max-w-2xl mx-auto mt-10 p-4 gap-9 place-content-between flex flex-row">
-        <input
+        <input 
           type="text"
-          className="border border-gray-300 rounded-md p-2 w-80%"
+          className="border border-black rounded-md text-center text-white p-2 w-80%"
           placeholder="Enter your Title"
+          
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
 
         <button
           onClick={createPaste}
-          className="bg-blue-500 text-white p-2 rounded-md mt-2"
+          className="bg-blue-500 text-white   p-2 rounded-md"
         >
           {pasteId ? "Update Paste" : "Create Paste"}
         </button>

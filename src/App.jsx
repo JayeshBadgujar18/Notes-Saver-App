@@ -12,11 +12,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div className="w-full h-screen p-4 m-1.5 flex flex-col gap-4">
-        <Navbar />
-
-        <Home />
-      </div>
+ <div className="w-full h-screen flex flex-col">
+  <Navbar />
+  <div className="flex justify-center items-center flex-1">
+    <Home />
+  </div>
+</div>
     ),
   },
   {
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="w-full h-full ">
+    <div className="w-full h-full">
       <RouterProvider router={router} />
     </div>
   );
