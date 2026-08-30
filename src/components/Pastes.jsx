@@ -1,7 +1,8 @@
 import { Calendar, Copy, Eye, PencilLine, Trash2 } from "lucide-react";
 import toast from "react-hot-toast";
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react"; // Import useState
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { removeFromPastes } from "../redux/pasteSlice";
 import { FormatDate } from "../utlis/formateDate";
 
@@ -56,17 +57,15 @@ const Paste = () => {
                   {/* icons */}
                   <div className="flex flex-col gap-y-4 sm:items-end">
                     <div className="flex gap-2 flex-wrap sm:flex-nowrap">
-                      <button
-                        className="p-2 rounded-[0.2rem] bg-white border border-[#c7c7c7]  hover:bg-transparent group hover:border-blue-500"
-                        // onClick={() => toast.error("Not working")}
+                      <Link
+                        to={`/?pasteId=${paste?._id}`}
+                        className="p-2 rounded-[0.2rem] bg-white border border-[#c7c7c7] hover:bg-transparent group hover:border-blue-500 inline-flex"
                       >
-                        <a href={`/?pasteId=${paste?._id}`}>
-                          <PencilLine
-                            className="text-black group-hover:text-blue-500"
-                            size={20}
-                          />
-                        </a>
-                      </button>
+                        <PencilLine
+                          className="text-black group-hover:text-blue-500"
+                          size={20}
+                        />
+                      </Link>
                       <button
                         className="p-2 rounded-[0.2rem] bg-white border border-[#c7c7c7]  hover:bg-transparent group hover:border-pink-500"
                         onClick={() => handleDelete(paste?._id)}
@@ -77,14 +76,15 @@ const Paste = () => {
                         />
                       </button>
 
-                      <button className="p-2 rounded-[0.2rem] bg-white border border-[#c7c7c7]  hover:bg-transparent group hover:border-orange-500">
-                        <a href={`/pastes/${paste?._id}`} target="_blank">
-                          <Eye
-                            className="text-black group-hover:text-orange-500"
-                            size={20}
-                          />
-                        </a>
-                      </button>
+                      <Link
+                        to={`/pastes/${paste?._id}`}
+                        className="p-2 rounded-[0.2rem] bg-white border border-[#c7c7c7] hover:bg-transparent group hover:border-orange-500 inline-flex"
+                      >
+                        <Eye
+                          className="text-black group-hover:text-orange-500"
+                          size={20}
+                        />
+                      </Link>
                       <button
                         className="p-2 rounded-[0.2rem] bg-white border border-[#c7c7c7]  hover:bg-transparent group hover:border-green-500"
                         onClick={() => {
